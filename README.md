@@ -1,24 +1,14 @@
-# README
+## Scrying Eye DnD Bot for Facebook Messenger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### [Facebook Page](https://www.facebook.com/ScryingEyeDnD)
 
-Things you may want to cover:
+### Features
 
-* Ruby version
+#### Coming soon
+- Roll dice eg. `roll 1d20`
+- Dice arithmetic
+- Monster Lookup
+- Spell Lookup
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### License
+MIT
