@@ -4,23 +4,19 @@ include Facebook::Messenger
  
 # Subcribe bot to page
 Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
- 
-Bot.on :message do |message|
-    # parse(message.text)
-    message.reply(text: 'Hello!')
-end
 
-# parse eg 1d12+3
-def parse(msg)
+Bot.on :message do |message|
     rollPattern = /roll (?<n>\d+)d(?<f>\d+)\+?(?<c>\d+)?/i
-    matches = rollPattern.match(msg)
-    if matches.nil?
-        return nil
+    matches = rollPattern.match(message.text)
+    
+    if !matches.nil?
+        n = matches['n']
+        f = matches['f']
+        c = matches['c'].nil? ? 0 : matches['c']
+
+        res = roll(n.to_i, f.to_i, c.to_i)
+        message.reply(text: "Rolled #{res}")
     end
-    n = matches['n']
-    f = matches['f']
-    c = matches['c'].nil? ? 0 : matches['c']
-    return n, f, c
 end
 
 # roll n dice with f faces each, and add c at the end
