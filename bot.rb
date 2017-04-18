@@ -1,5 +1,8 @@
 require 'facebook/messenger'
 require 'dotenv/load'
+require 'sinatra/activerecord'
+require_relative 'config/environments.rb'
+require_relative 'models/spell.rb'
 include Facebook::Messenger
  
 # Subcribe bot to page
