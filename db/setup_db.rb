@@ -7,7 +7,13 @@ DB = Sequel.connect(ENV['DATABASE_URL'])
 if !DB.table_exists?(:spells)
     puts 'creating spells table'
     DB.create_table :spells do
-        primary_key :id
-        String :name
+        String :title, :unique => true
+        Integer :level
+        String :type
+        String :time
+        String :range
+        String :components
+        String :duration
+        String :description, :text => true
     end
 end
