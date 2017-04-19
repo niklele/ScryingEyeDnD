@@ -14,3 +14,8 @@ desc 'import spells data from csv'
 task :load_db => :setup_db do
     ruby "db/load_db.rb #{ENV['SPELLS_FILE']}"
 end
+
+desc 'run tests'
+task :test do
+    ruby 'test/test_db.rb'
+end
