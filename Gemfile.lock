@@ -28,6 +28,7 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   facebook-messenger
+  pg
   sequel
   sequel_pg
   sinatra
